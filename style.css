@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
 
+/* CSS Variables */
 :root {
   /* Colors */
   --gray-1: #f7f7f7;
@@ -169,4 +170,47 @@ a {
 a:hover {
   color: var(--linkHoverColor);
   text-decoration: underline;
+}
+
+/* App Styles */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.app__title {
+  text-align: center;
+}
+
+.cardInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: left;
+}
+
+.cardInfo__img {
+  width: 250px;
+  justify-self: center;
+}
+
+.cardInfo__cardName {
+  font-size: var(--heading-4);
+}
+
+.cardInfo__randomCardBtn {
+  padding: 0.5rem;
+  background: var(--primary-3);
+  width: 100%;
+}
+
+.cardInfo__oracleTextBtn {
+  background: var(--gray-3);
+}
+
+.cardInfo__oracleTextP {
+  display: none;
+}
+
+.cardInfo__oracleTextP--show {
+  display: block;
 }

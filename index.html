@@ -4,8 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Commander</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container"></div>
+    <div class="app container">
+      <h1 class="app__title">Random Commander</h1>
+      <div class="cardInfo">
+        <img
+          src="https://img.scryfall.com/cards/border_crop/front/1/7/17d6703c-ad79-457b-a1b5-c2284e363085.jpg?1562633606"
+          alt="Commander"
+          class="cardInfo__img"
+        />
+        <h2 class="cardInfo__name">Meren of Clan Nel Toth</h2>
+        <p class="cardInfo__type">Legendary Creature — Human Shaman</p>
+        <p class="cardInfo__cost">{2}{B}{G}</p>
+        <p class="cardInfo__colorId">GB</p>
+        <div class="cardInfo__oracleText">
+          <button class="cardInfo__oracleTextBtn">Show Oracle Text</button>
+          <p class="cardInfo__oracleTextP">
+            Whenever another creature you control dies, you get an experience
+            counter. At the beginning of your end step, choose target creature
+            card in your graveyard. If that card's converted mana cost is less
+            than or equal to the number of experience counters you have, return
+            it to the battlefield. Otherwise, put it into your hand.
+          </p>
+        </div>
+        <a
+          class="cardInfo__edhRec"
+          target="_blank"
+          href="https://edhrec.com/commanders/meren-of-clan-nel-toth"
+          >EDH Rec</a
+        >
+        <button class="cardInfo__randomCardBtn">Random</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
