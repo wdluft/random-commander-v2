@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+
+:root {
+  /* Colors */
+  --gray-1: #f7f7f7;
+  --gray-2: #cfcfcf;
+  --gray-3: #9e9e9e;
+  --gray-4: #626262;
+  --gray-5: #4f4f4f;
+  --gray-6: #333333;
+  --gray-7: #222222;
+
+  --primary-1: #c8ffff;
+  --primary-2: #80ffff;
+  --primary-3: #00ffff;
+  --primary-4: #009999;
+  --primary-5: #004242;
+
+  /* Background */
+  --bg-color: var(--gray-1);
+
+  /* Fonts */
+  --heading-font: 'Muli', sans-serif;
+  --body-font: 'Muli', sans-serif;
+
+  /* Font sizes */
+  --baseFontSize: 1rem;
+  --smallFontSize: 0.75rem;
+  --extraSmallFontSize: 0.512rem;
+  --mediumFontSize: 1.25rem;
+  --largeFontSize: 1.5rem;
+  --extraLargeFontSize: 4rem;
+  --doubleXLFontSize: 5rem;
+  --heading-1: 3rem;
+  --heading-2: 2.5rem;
+  --heading-3: 2rem;
+  --heading-4: 1.5rem;
+  --heading-5: var(--baseFontSize);
+  --heading-6: var(--smallFontSize);
+
+  /* Links */
+  --linkColor: var(--primary-3);
+  --linkHoverColor: var(--primary-2);
+
+  /* Elevation */
+  --elevation-0: inset 0 7px 9 -7px rgba(0, 0, 0, 0.7);
+  --elevation-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --elevation-2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --elevation-3: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+  --elevation-4: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  --elevation-5: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  --massiveShadow: inset 0 3px 0 0 rgba(110, 110, 110, 1),
+    0 7px 3px 3px rgba(0, 0, 0, 0.55), 0 10px 10px 10px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list style */
+ul {
+  list-style: none;
+}
+
+/* Reset forms and buttons */
+input,
+textarea,
+select,
+button {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+input,
+textarea {
+  border: 1px solid var(--gray-3);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+button * {
+  pointer-events: none;
+}
+
+/* Easy responsive for media elements */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Hidden */
+[hidden] {
+  display: none !important;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--gray-7);
+  background: var(--bg-color);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  line-height: 1.15;
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+nav {
+  font-family: var(--heading-font);
+}
+
+h1 {
+  font-size: var(--heading-1);
+  letter-spacing: 0.2rem;
+}
+h2 {
+  font-size: var(--heading-2);
+  letter-spacing: 0.2rem;
+}
+h3 {
+  font-size: var(--heading-3);
+  letter-spacing: 0.2rem;
+}
+h4 {
+  font-size: var(--heading-4);
+}
+h5 {
+  font-size: var(--heading-5);
+}
+h6 {
+  font-size: var(--heading-6);
+}
+
+p {
+  font-family: var(--body-font);
+  line-height: 1.75rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--linkColor);
+}
+
+a:hover {
+  color: var(--linkHoverColor);
+  text-decoration: underline;
+}
