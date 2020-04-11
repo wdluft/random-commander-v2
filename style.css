@@ -181,6 +181,7 @@ a:hover {
 .btn {
   border-radius: 5px;
   padding: 0.5rem;
+  background: var(--primary-3);
 }
 
 .app__title {
@@ -202,7 +203,8 @@ a:hover {
 }
 
 .cardDetails {
-  background: var(--gray-2);
+  background: var(--gray-5);
+  color: var(--gray-1);
   width: 90%;
   box-shadow: var(--elevation-2);
   border-radius: 0 0 5px 5px;
@@ -216,13 +218,23 @@ a:hover {
 
 .cardDetails__randomCardBtn {
   padding: 0.5rem;
-  background: var(--primary-3);
   width: 100%;
   border-radius: 5px;
 }
 
 .cardDetails__oracleTextBtn {
-  background: var(--gray-3);
+  background: none;
+  padding: 0;
+}
+
+.cardDetails__oracleTextBtn svg {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--gray-1);
+}
+
+.cardDetails__oracleTextBtn:hover {
+  text-decoration: underline;
 }
 
 .cardDetails__oracleTextP {
