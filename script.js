@@ -9,13 +9,23 @@ const edhRec = document.querySelector('.cardInfo__edhRec');
 const randomBtn = document.querySelector('.cardInfo__randomCardBtn');
 const SCRYFALL_URL = 'https://api.scryfall.com/cards/random?q=is%3Acommander';
 
+// Display promise errors
+const handleErrors = (err) => {
+  console.log('Oh no, something went wrong!');
+  console.log(err);
+};
+
 const fetchCard = async () => {
   const res = await fetch(SCRYFALL_URL);
   const data = await res.json();
-  if (data.legalities.commander === 'not_legal') {
-    getCard();
+  return data;
+};
+
+// If card is not legal, get new card
+const checkCommanderLegality = (card) => {
+  if (card.legalities.commander === 'not_legal') {
+    getNewCard();
   }
-  showCard(data);
 };
 
 const showCard = async (card) => {
@@ -28,9 +38,18 @@ const showCard = async (card) => {
   edhRec.href = card.related_uris.edhrec;
 };
 
+const getNewCard = async () => {
+  const newCard = await fetchCard().catch(handleErrors);
+  checkCommanderLegality(newCard);
+  showCard(newCard);
+};
+
+// Toggle whether the card's updated rules text is displayed
 const showOracleText = () => {
   oracleP.classList.toggle('cardInfo__oracleTextP--show');
 };
 
-randomBtn.addEventListener('click', fetchCard);
+randomBtn.addEventListener('click', getNewCard);
 oracleBtn.addEventListener('click', showOracleText);
+
+getNewCard();
