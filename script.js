@@ -1,12 +1,12 @@
 const img = document.querySelector('.cardInfo__img');
-const name = document.querySelector('.cardInfo__name');
-const type = document.querySelector('.cardInfo__type');
-const manacost = document.querySelector('.cardInfo__cost');
-const colorId = document.querySelector('.cardInfo__colorId');
-const oracleP = document.querySelector('.cardInfo__oracleTextP');
-const oracleBtn = document.querySelector('.cardInfo__oracleTextBtn');
-const edhRec = document.querySelector('.cardInfo__edhRec');
-const randomBtn = document.querySelector('.cardInfo__randomCardBtn');
+const name = document.querySelector('.cardDetails__name');
+const type = document.querySelector('.cardDetails__type');
+const manacost = document.querySelector('.cardDetails__cost');
+const colorId = document.querySelector('.cardDetails__colorId');
+const oracleP = document.querySelector('.cardDetails__oracleTextP');
+const oracleBtn = document.querySelector('.cardDetails__oracleTextBtn');
+const edhRec = document.querySelector('.cardDetails__edhRec');
+const randomBtn = document.querySelector('.cardDetails__randomCardBtn');
 const SCRYFALL_URL = 'https://api.scryfall.com/cards/random?q=is%3Acommander';
 
 // Display promise errors
@@ -29,7 +29,8 @@ const checkCommanderLegality = (card) => {
 };
 
 const showCard = async (card) => {
-  img.src = card.image_uris.normal;
+  img.src = card.image_uris.png;
+  // img.src = card.image_uris.border_crop;
   name.textContent = card.name;
   type.textContent = card.type_line;
   manacost.textContent = card.mana_cost;
@@ -46,7 +47,7 @@ const getNewCard = async () => {
 
 // Toggle whether the card's updated rules text is displayed
 const showOracleText = () => {
-  oracleP.classList.toggle('cardInfo__oracleTextP--show');
+  oracleP.classList.toggle('cardDetails__oracleTextP--show');
 };
 
 randomBtn.addEventListener('click', getNewCard);

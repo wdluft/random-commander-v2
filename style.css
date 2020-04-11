@@ -178,6 +178,11 @@ a:hover {
   margin: 0 auto;
 }
 
+.btn {
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
 .app__title {
   text-align: center;
 }
@@ -185,32 +190,45 @@ a:hover {
 .cardInfo {
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: left;
+  justify-items: center;
+  grid-gap: 1.25rem;
 }
 
 .cardInfo__img {
   width: 250px;
   justify-self: center;
+  box-shadow: var(--elevation-3);
+  border-radius: 13px;
 }
 
-.cardInfo__cardName {
+.cardDetails {
+  background: var(--gray-2);
+  width: 90%;
+  box-shadow: var(--elevation-2);
+  border-radius: 0 0 5px 5px;
+  padding: 5px;
+  border-top: 5px solid var(--primary-3);
+}
+
+.cardDetails__name {
   font-size: var(--heading-4);
 }
 
-.cardInfo__randomCardBtn {
+.cardDetails__randomCardBtn {
   padding: 0.5rem;
   background: var(--primary-3);
   width: 100%;
+  border-radius: 5px;
 }
 
-.cardInfo__oracleTextBtn {
+.cardDetails__oracleTextBtn {
   background: var(--gray-3);
 }
 
-.cardInfo__oracleTextP {
+.cardDetails__oracleTextP {
   display: none;
 }
 
-.cardInfo__oracleTextP--show {
+.cardDetails__oracleTextP--show {
   display: block;
 }
