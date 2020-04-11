@@ -55,6 +55,7 @@
     0 7px 3px 3px rgba(0, 0, 0, 0.55), 0 10px 10px 10px rgba(0, 0, 0, 0.35);
 }
 
+/* basic reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -156,7 +157,6 @@ h5 {
 h6 {
   font-size: var(--heading-6);
 }
-
 p {
   font-family: var(--body-font);
   line-height: 1.75rem;
