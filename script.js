@@ -47,6 +47,11 @@ const getNewCard = async () => {
 
 // Toggle whether the card's updated rules text is displayed
 const showOracleText = () => {
+  if (!oracleP.classList.contains('cardDetails__oracleTextP--show')) {
+    oracleBtn.textContent = 'Hide Oracle Text';
+  } else {
+    oracleBtn.textContent = 'Show Oracle Text';
+  }
   oracleP.classList.toggle('cardDetails__oracleTextP--show');
 };
 
