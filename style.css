@@ -267,14 +267,6 @@ a:hover {
   text-align: center;
 }
 
-.footer__link {
-  color: var(--secondary-2);
-}
-
-.footer__link:hover {
-  color: var(--secondary-4);
-}
-
 .footer__hr {
   border: 0;
   height: 1px;
@@ -302,6 +294,11 @@ a:hover {
   .cardInfo__img {
     width: 90%;
     max-width: 400px;
+  }
+
+  .cardDetails {
+    width: 90%;
+    max-width: 425px;
   }
 }
 
