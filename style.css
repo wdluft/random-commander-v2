@@ -279,6 +279,10 @@ a:hover {
   );
 }
 
+.footer__disclaimer {
+  font-size: var(--smallFontSize);
+}
+
 /* Medium Screens/Tablets */
 @media (min-width: 640px) {
   .cardInfo__img {
