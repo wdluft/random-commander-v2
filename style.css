@@ -17,11 +17,11 @@
   --primary-4: #009999;
   --primary-5: #004242;
 
-  --secondary-1: #610316;
-  --secondary-2: #ab091e;
-  --secondary-3: #e12d39;
-  --secondary-4: #f86a6a;
-  --secondary-5: #ffe3e3;
+  --secondary-1: #ffc799;
+  --secondary-2: #ffa052;
+  --secondary-3: #ff7400;
+  --secondary-4: #b25100;
+  --secondary-5: #662e00;
 
   /* Background */
   --bg-color: var(--gray-1);
@@ -46,8 +46,8 @@
   --heading-6: var(--smallFontSize);
 
   /* Links */
-  --linkColor: var(--secondary-2);
-  --linkHoverColor: var(--secondary-4);
+  --linkColor: var(--secondary-5);
+  --linkHoverColor: var(--secondary-3);
 
   /* Elevation */
   --elevation-0: inset 0 7px 9 -7px rgba(0, 0, 0, 0.7);
@@ -180,7 +180,7 @@ a:hover {
 
 /* App Styles */
 .container {
-  max-width: 1024px;
+  max-width: 800px;
   min-height: 100vh;
   margin: 0 auto;
   display: flex;
@@ -206,7 +206,7 @@ a:hover {
 
 .cardInfo {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   justify-items: center;
   grid-gap: 1.25rem;
 }
@@ -219,11 +219,14 @@ a:hover {
 }
 
 .cardDetails {
-  width: 100%;
+  width: 90%;
   box-shadow: var(--elevation-2);
   border-radius: 0 0 5px 5px;
   padding: 10px;
   border-top: 5px solid var(--primary-3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cardDetails__name {
@@ -281,12 +284,22 @@ a:hover {
 
 .footer__disclaimer {
   font-size: var(--smallFontSize);
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.footer__link {
+  text-decoration: underline;
+}
+
+.footer__link:hover {
+  text-decoration: none;
 }
 
 /* Medium Screens/Tablets */
 @media (min-width: 640px) {
   .cardInfo__img {
-    width: 350px;
+    width: 325px;
   }
 }
 
