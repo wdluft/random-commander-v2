@@ -53,19 +53,19 @@ const showCard = async (card) => {
 };
 
 const getNewCard = async () => {
-  // flipCard.classList.add('flipped');
+  flipCard.classList.add('flipped');
   const newCard = await fetchCard().catch(handleErrors);
   checkCommanderLegality(newCard);
   await showCard(newCard);
-//  flipCard.classList.remove('flipped');
 };
 
 const showNewCard = async () => {
   flipCard.classList.add('flipped');
   await getNewCard();
-  setTimeout(() => {
-    flipCard.classList.remove('flipped');
-  }, 1500);
+}
+
+const cardImageLoaded = () => {
+  flipCard.classList.remove('flipped');
 }
 
 // Toggle whether the card's updated rules text is displayed
@@ -80,3 +80,4 @@ const showOracleText = () => {
 
 randomBtn.addEventListener('click', showNewCard);
 oracleBtn.addEventListener('click', showOracleText);
+img.addEventListener('load', cardImageLoaded);
