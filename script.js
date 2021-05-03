@@ -35,7 +35,7 @@ const fetchCard = async () => {
 };
 
 // If card is not legal, get new card
-const checkCommanderLegality = (card) => {
+const checkCommanderLegality = async (card) => {
   if (card.legalities.commander === 'not_legal') {
     getNewCard();
   }
@@ -55,8 +55,8 @@ const showCard = async (card) => {
 const getNewCard = async () => {
   flipCard.classList.add('flipped');
   const newCard = await fetchCard().catch(handleErrors);
-  checkCommanderLegality(newCard);
-  await showCard(newCard);
+  await checkCommanderLegality(newCard).catch(handleErrors);
+  await showCard(newCard).catch(handleErrors);
 };
 
 const showNewCard = async () => {
