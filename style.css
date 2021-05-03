@@ -183,6 +183,7 @@ a:hover {
   border-radius: 5px;
   padding: 0.5rem;
   background: var(--secondary);
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -198,20 +199,74 @@ a:hover {
 
 .cardInfo {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  width: 100%;
+  padding: 0 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   justify-items: center;
   grid-gap: 1.25rem;
 }
 
-.cardInfo__img {
+/* Card image flip */
+.flip-card {
+  background-color: transparent;
   width: 250px;
+  height: 348px;
   justify-self: center;
-  box-shadow: var(--elevation-3);
+
+  border-radius: 13px;
+  perspective: 1000px; /*for 3d effect*/
+}
+
+.flip-card img {
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card-inner {
+  /* containter to position front and back */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 13px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  /* Position front and back */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
   border-radius: 13px;
 }
 
+.cardInfo__img,
+.cardInfo__img--back {
+  border-radius: 13px;
+  box-shadow: var(--elevation-3);
+}
+
+/* Style front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: var(--tertiary);
+}
+
+/* Style back side */
+.flip-card-back {
+  background-color: var(--tertiary);
+  transform: rotateY(180deg);
+}
+
 .cardDetails {
-  width: 90%;
+  width: 100%;
   box-shadow: var(--elevation-2);
   border-radius: 0 0 5px 5px;
   padding: 10px;
@@ -283,18 +338,11 @@ a:hover {
   margin: 0 auto;
 }
 
-/* .footer__link {
-  text-decoration: underline;
-}
-
-.footer__link:hover {
-  text-decoration: none;
-} */
-
 /* Medium Screens/Tablets */
 @media (min-width: 640px) {
-  .cardInfo__img {
+  .flip-card {
     width: 325px;
+    height: 454px;
   }
 }
 
@@ -303,14 +351,15 @@ a:hover {
   .cardInfo {
     grid-template-columns: 1fr 1fr;
   }
-  .cardInfo__img {
-    width: 90%;
-    max-width: 400px;
+
+  .flip-card {
+    width: 344px;
+    height: 480px;
   }
 
   .cardDetails {
-    width: 90%;
-    max-width: 425px;
+    width: 344px;
+    min-height: 480px;
   }
 }
 

@@ -16,17 +16,30 @@
     <div class="app container">
       <h1 class="app__title">Random Commander</h1>
       <div class="cardInfo">
-        <img
-          src="https://img.scryfall.com/cards/border_crop/front/1/7/17d6703c-ad79-457b-a1b5-c2284e363085.jpg?1562633606"
-          alt="Commander"
-          class="cardInfo__img"
-        />
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="./images/cardback (Custom).png"
+                alt="Commander"
+                class="cardInfo__img"
+              />
+            </div>
+            <div class="flip-card-back">
+              <img
+                src="./images/cardback.png"
+                alt="Commander"
+                class="cardInfo__img--back"
+              />
+            </div>
+          </div>
+        </div>
         <div class="cardDetails">
           <div>
-            <h2 class="cardDetails__name">Meren of Clan Nel Toth</h2>
-            <p class="cardDetails__type">Legendary Creature — Human Shaman</p>
-            <p class="cardDetails__cost">{2}{B}{G}</p>
-            <p class="cardDetails__colorId">GB</p>
+            <h2 class="cardDetails__name">Card Name</h2>
+            <p class="cardDetails__type">Card Type</p>
+            <p class="cardDetails__cost">Mana Cost</p>
+            <p class="cardDetails__colorId">Color Id</p>
             <div class="cardDetails__oracleText">
               <button class="cardDetails__oracleTextBtn btn">
                 Show Oracle Text
@@ -44,14 +57,7 @@
                   />
                 </svg>
               </button>
-              <p class="cardDetails__oracleTextP">
-                Whenever another creature you control dies, you get an
-                experience counter. At the beginning of your end step, choose
-                target creature card in your graveyard. If that card's converted
-                mana cost is less than or equal to the number of experience
-                counters you have, return it to the battlefield. Otherwise, put
-                it into your hand.
-              </p>
+              <p class="cardDetails__oracleTextP">Oracle text</p>
             </div>
             <a
               class="cardDetails__edhRec"

@@ -7,6 +7,7 @@ const oracleP = document.querySelector('.cardDetails__oracleTextP');
 const oracleBtn = document.querySelector('.cardDetails__oracleTextBtn');
 const edhRec = document.querySelector('.cardDetails__edhRec');
 const randomBtn = document.querySelector('.cardDetails__randomCardBtn');
+const flipCard = document.querySelector('.flip-card');
 const SCRYFALL_URL = 'https://api.scryfall.com/cards/random?q=is%3Acommander';
 const showHTML = `
   Show Oracle Text
@@ -34,7 +35,7 @@ const fetchCard = async () => {
 };
 
 // If card is not legal, get new card
-const checkCommanderLegality = (card) => {
+const checkCommanderLegality = async (card) => {
   if (card.legalities.commander === 'not_legal') {
     getNewCard();
   }
@@ -42,20 +43,30 @@ const checkCommanderLegality = (card) => {
 
 const showCard = async (card) => {
   img.src = card.image_uris.png;
-  // img.src = card.image_uris.border_crop;
   name.textContent = card.name;
   type.textContent = card.type_line;
   manacost.textContent = `Casting Cost: ${card.mana_cost}`;
   colorId.textContent = `Color Id: ${card.color_identity.join('')}`;
   oracleP.textContent = card.oracle_text;
   edhRec.href = card.related_uris.edhrec;
+
 };
 
 const getNewCard = async () => {
+  flipCard.classList.add('flipped');
   const newCard = await fetchCard().catch(handleErrors);
-  checkCommanderLegality(newCard);
-  showCard(newCard);
+  await checkCommanderLegality(newCard).catch(handleErrors);
+  await showCard(newCard).catch(handleErrors);
 };
+
+const showNewCard = async () => {
+  flipCard.classList.add('flipped');
+  await getNewCard();
+}
+
+const cardImageLoaded = () => {
+  flipCard.classList.remove('flipped');
+}
 
 // Toggle whether the card's updated rules text is displayed
 const showOracleText = () => {
@@ -67,7 +78,6 @@ const showOracleText = () => {
   oracleP.classList.toggle('cardDetails__oracleTextP--show');
 };
 
-randomBtn.addEventListener('click', getNewCard);
+randomBtn.addEventListener('click', showNewCard);
 oracleBtn.addEventListener('click', showOracleText);
-
-getNewCard();
+img.addEventListener('load', cardImageLoaded);
