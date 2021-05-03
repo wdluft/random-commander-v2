@@ -183,6 +183,7 @@ a:hover {
   border-radius: 5px;
   padding: 0.5rem;
   background: var(--secondary);
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -198,7 +199,9 @@ a:hover {
 
 .cardInfo {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  width: 100%;
+  padding: 0 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   justify-items: center;
   grid-gap: 1.25rem;
 }
@@ -207,7 +210,7 @@ a:hover {
 .flip-card {
   background-color: transparent;
   width: 250px;
-  height: 350px;
+  height: 348px;
   justify-self: center;
 
   border-radius: 13px;
@@ -263,7 +266,7 @@ a:hover {
 }
 
 .cardDetails {
-  width: 90%;
+  width: 100%;
   box-shadow: var(--elevation-2);
   border-radius: 0 0 5px 5px;
   padding: 10px;
@@ -339,7 +342,7 @@ a:hover {
 @media (min-width: 640px) {
   .flip-card {
     width: 325px;
-    height: 455px;
+    height: 454px;
   }
 }
 
@@ -350,15 +353,13 @@ a:hover {
   }
 
   .flip-card {
-    max-width: 400px;
-    min-width: 325px;
-    width: 90%;
+    width: 344px;
+    height: 480px;
   }
 
   .cardDetails {
-    min-width: 325px;
-    max-width: 425px;
-    width: 90%;
+    width: 344px;
+    min-height: 480px;
   }
 }
 
